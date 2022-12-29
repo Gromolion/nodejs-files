@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <title>Файл добавлен</title>
+</head>
+<body>
+<style>
+  a {
+    color: #2e8063;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.1s;
+  }
+  a:hover {
+    font-size: 105%;
+  }
+  .a-btn {
+    color: black;
+    font-weight: normal;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid black
+  }
+</style>
+<div style="margin: 150px auto 0; width: fit-content; padding: 20px; border-radius: 10px; background-color: #e7e6e6">
+  <ul style="display: flex; list-style-type: none; padding: 0; gap: 10px">
+    <li>
+      <a href="/">На главную</a>
+    </li>
+  </ul>
+  <h3>Файл {{fileName}}</h3>
+  <div>{{fileContent}}</div>
+  <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+    <a href="" class="a-btn" id="a-update" style="margin-right: 20px; background-color: aquamarine;">Обновить</a>
+    <form action="/update-form" id="f-update" method="POST">
+      <input type="hidden" name="name" id="update" value="{{fileName}}">
+    </form>
+    <a href="" class="a-btn" id="a-delete" style="background-color: #fc5a5a;">Удалить</a>
+    <form action="/delete" id="f-delete" method="POST">
+      <input type="hidden" name="name" id="delete" value="{{fileName}}">
+    </form>
+  </div>
+</div>
+<script>
+  jQuery('#a-update').click(function (e) {
+    e.preventDefault();
+    jQuery('#f-update').submit()
+  })
+  jQuery('#a-delete').click(function (e) {
+    e.preventDefault();
+    jQuery('#f-delete').submit()
+  })
+</script>
+</body>
+</html>

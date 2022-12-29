@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Файловая система</title>
+</head>
+<body>
+    <style>
+        a {
+            color: #2e8063;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.1s;
+        }
+        a:hover {
+            font-size: 105%;
+        }
+        button {transition: 0.1s}
+        button:hover {font-size: 105%}
+    </style>
+
+    <div style="margin: 150px auto 0; width: fit-content; padding: 20px; border-radius: 10px; background-color: #e7e6e6">
+        <ul style="display: flex; list-style-type: none; padding: 0; gap: 10px">
+            <li>
+                <a href="/get">Посмотреть файл</a>
+            </li>
+        </ul>
+
+        <h3>Добро пожаловать!</h3>
+
+        <p>Добавьте файл:</p>
+        <form action="/" method="POST">
+            <div style="display: flex">
+                <label for="title" style="width: 120px">Название:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+
+            <div style="display: flex; margin-top: 10px">
+                <label for="content" style="width: 120px">Содержимое:</label>
+                <textarea name="content" id="content" cols="40" rows="10" required></textarea>
+            </div>
+
+            <div style="display: flex; margin-top: 10px">
+                <label for="ext" style="width: 120px">Расширение:</label>
+                <input type="text" id="ext" name="ext" required>
+            </div>
+
+            <div style="display: flex; justify-content: center; margin-top: 10px">
+                <button style="background-color: aquamarine; padding: 10px; border-radius: 5px; border: 1px solid black">Добавить</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

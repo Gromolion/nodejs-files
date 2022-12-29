@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-files",
+  "version": "1.0.0",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "jquery": "^3.6.3",
+    "select2": "^4.1.0-rc.0"
+  },
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gromolion/nodejs-files.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gromolion/nodejs-files/issues"
+  },
+  "homepage": "https://github.com/Gromolion/nodejs-files#readme",
+  "description": ""
+}

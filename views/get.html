@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Посмотреть файл</title>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</head>
+<body>
+<style>
+  a {
+    color: #2e8063;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.1s;
+  }
+  a:hover {
+    font-size: 105%;
+  }
+  button {transition: 0.1s}
+  button:hover {font-size: 105%}
+</style>
+<div style="margin: 150px auto 0; width: fit-content; padding: 20px; border-radius: 10px; background-color: #e7e6e6">
+  <ul style="display: flex; list-style-type: none; padding: 0; gap: 10px">
+    <li>
+      <a href="/">На главную</a>
+    </li>
+  </ul>
+  <h3>Посмотреть файл</h3>
+
+  <p>Выберите файл:</p>
+  <form action="/file" method="POST">
+    <div style="display: flex">
+      <label for="title" style="width: 80px">Название:</label>
+      <select id="title" name="title" style="width: 200px">
+        {{files}}
+      </select>
+    </div>
+    <div style="display: flex; justify-content: center; margin-top: 10px">
+      <button style="background-color: aquamarine; padding: 10px; border-radius: 5px; border: 1px solid black">Посмотреть</button>
+    </div>
+  </form>
+</div>
+<script>
+  $(document).ready(function() {
+    $('select#title').select2({
+      minimumResultsForSearch: 6,
+      escapeMarkup: function (markup) { return markup; },
+      language: {
+        noResults: function () {
+          return 'Файлов нет';
+        }
+      }
+    })
+  })
+</script>
+</body>
+</html>
